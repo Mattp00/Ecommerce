@@ -1,8 +1,9 @@
-package com.progetto.repository;
+package com.example.repository;
 
-import com.progetto.model.Magazzino;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.example.model.Magazzino;
 
 @Repository
 public interface MagazzinoRepository extends CrudRepository<Magazzino,Long>

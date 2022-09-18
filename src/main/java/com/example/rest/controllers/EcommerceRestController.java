@@ -1,18 +1,19 @@
-package com.progetto.rest.controllers;
+package com.example.rest.controllers;
 
-import com.progetto.model.Cliente;
-import com.progetto.model.Ordine;
-import com.progetto.repository.ClienteRepository;
-import com.progetto.repository.OrdineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.model.Cliente;
+import com.example.model.Ordine;
+import com.example.repository.ClienteRepository;
+import com.example.repository.OrdineRepository;
+
 
 
 @Controller
-@RequestMapping(path="/store")
+@RequestMapping(path="/api/store")
 public class EcommerceRestController
 {   @Autowired
     private OrdineRepository ordineRepository;
@@ -20,20 +21,19 @@ public class EcommerceRestController
     private ClienteRepository clienteRepository;
 
     @GetMapping("/ordini")
-
     Iterable<Ordine> getOrdini()
-    {   System.out.println(ordineRepository.findAll());
+    {   Iterable<Ordine> temp = ordineRepository.findAll();
         return ordineRepository.findAll();
     }
 
-    @GetMapping(path="/clienti")
+    @GetMapping("/clienti")
     //@Transactional(readOnly = true)
     Iterable<Cliente> getClienti()
     {   Iterable<Cliente> temp;
         return clienteRepository.findAll();
     }
 
-    @GetMapping(path="/prova")
+    @GetMapping("/prova")
     String provaLista()
     {   return "ciao";
     }

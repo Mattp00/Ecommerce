@@ -1,8 +1,9 @@
-package com.progetto.repository;
+package com.example.repository;
 
-import com.progetto.model.Amministratore;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.example.model.Amministratore;
 
 @Repository
 public interface AmministratoreRepository extends CrudRepository<Amministratore,Long>

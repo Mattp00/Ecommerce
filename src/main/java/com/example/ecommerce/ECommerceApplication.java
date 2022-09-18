@@ -1,31 +1,30 @@
-package com.progetto;
+package com.example.ecommerce;
 
-import com.progetto.model.Cliente;
+/* import com.progetto.model.Cliente;
 import com.progetto.model.Ordine;
 import com.progetto.repository.ClienteRepository;
 import com.progetto.repository.OrdineRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; */
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.Transactional;
+/* import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.List; */
 
 @SpringBootApplication
-@RestController
 public class ECommerceApplication
-{	@Autowired
+{	/* @Autowired
 	private ClienteRepository clienteRepository;
 	@Autowired
-	private OrdineRepository ordineRepository;
+	private OrdineRepository ordineRepository; */
 
 	public static void main(String[] args) {
 		SpringApplication.run(ECommerceApplication.class, args);
 	}
 
-	@GetMapping
+/* 	@GetMapping
 	public String index()
 	{	return "<ul>" +
 				"<li>Questo è l'indice</li>" +
@@ -51,5 +50,5 @@ public class ECommerceApplication
 	{   System.out.println(ordineRepository.findAll());
 		return ordineRepository.findAll();
 	}
-
+ */
 }
