@@ -7,7 +7,8 @@ CREATE TABLE cliente
 	nome VARCHAR(20),
 	cognome VARCHAR(50),
     email VARCHAR(256),
-    eta INT
+    eta INT,
+	pass VARCHAR(50)
 );
 
 CREATE TABLE amministratore
@@ -15,20 +16,21 @@ CREATE TABLE amministratore
 	nome VARCHAR(20),
 	cognome VARCHAR(50),
 	email VARCHAR(256),
-    eta INT
+    eta INT,
+    pass VARCHAR(50)
 );
 
 CREATE TABLE magazzino
 (	cod_prodotto SERIAL,
 	nome VARCHAR(20),
-	quantita INT
+	quantita INT,
+	descrizione VARCHAR(256)
 );
 
 CREATE TABLE prodotto
 (	id SERIAL,
 	cod_prodotto BIGINT UNSIGNED,
     prezzo DECIMAL(5,2),
-    descrizione VARCHAR(256),
     FOREIGN KEY(cod_prodotto) REFERENCES magazzino(cod_prodotto)
 );
 
@@ -41,21 +43,21 @@ CREATE TABLE ordine
 	FOREIGN KEY(acquirente) REFERENCES cliente(id)
 );
 
-INSERT INTO cliente(nome,cognome,email,eta) VALUES('matteo','parrotta','matteoparrott@outlook.it',21);
-INSERT INTO cliente(nome,cognome,email,eta) VALUES('giuseppe','parrotta','giuseppe@outlook.it',25);
-INSERT INTO cliente(nome,cognome,email,eta) VALUES('franco','cansio','bidellotrieste@outlook.it',78);
+INSERT INTO cliente(nome,cognome,email,eta,pass) VALUES('matteo','parrotta','matteoparrott@outlook.it',21,'pass1');
+INSERT INTO cliente(nome,cognome,email,eta,pass) VALUES('giuseppe','parrotta','giuseppe@outlook.it',25,'pass2');
+INSERT INTO cliente(nome,cognome,email,eta,pass) VALUES('franco','cansio','bidellotrieste@outlook.it',78,'pass3');
 
-INSERT INTO amministratore(nome,cognome,email,eta) VALUES('Demetrio','Amilcari','bankd@outlook.it',41);
+INSERT INTO amministratore(nome,cognome,email,eta,pass) VALUES('Demetrio','Amilcari','bankd@outlook.it',41,'pass4');
 
-INSERT INTO magazzino(nome,quantita) VALUES('Tv',41);
-INSERT INTO magazzino(nome,quantita) VALUES('Smartphone',0);
-INSERT INTO magazzino(nome,quantita) VALUES('sedia',6);
-INSERT INTO magazzino(nome,quantita) VALUES('cuffie',14);
+INSERT INTO magazzino(nome,quantita,descrizione) VALUES('Tv',41,"bella tv");
+INSERT INTO magazzino(nome,quantita,descrizione) VALUES('Smartphone',0,"bellissimo smartphone");
+INSERT INTO magazzino(nome,quantita,descrizione) VALUES('sedia',6,"bella sedia");
+INSERT INTO magazzino(nome,quantita,descrizione) VALUES('cuffie',14,"belle cuffie");
 
-INSERT INTO prodotto(cod_prodotto,prezzo,descrizione) VALUES(1,400,"bella tv");
-INSERT INTO prodotto(cod_prodotto,prezzo,descrizione) VALUES(2,600,"bellissimo smartphone");
-INSERT INTO prodotto(cod_prodotto,prezzo,descrizione) VALUES(3,12,"bella sedia");
-INSERT INTO prodotto(cod_prodotto,prezzo,descrizione) VALUES(4,40,"belle cuffie");
+INSERT INTO prodotto(cod_prodotto,prezzo) VALUES(1,400);
+INSERT INTO prodotto(cod_prodotto,prezzo) VALUES(2,600);
+INSERT INTO prodotto(cod_prodotto,prezzo) VALUES(3,12);
+INSERT INTO prodotto(cod_prodotto,prezzo) VALUES(4,40);
 
 INSERT INTO ordine(id_ordine,cod_prodotto,quantita,acquirente) VALUES(1,1,2,1);
 INSERT INTO ordine(id_ordine,cod_prodotto,quantita,acquirente) VALUES(1,3,3,1);
