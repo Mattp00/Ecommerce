@@ -4,4 +4,5 @@ export interface Cliente
     cognome:string
     email:string
     eta:number
+    password:string
 }

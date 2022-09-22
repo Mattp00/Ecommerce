@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="send()">
+    <div>
+      <label>
+        Email:
+        <input class="form-control" type="email" placeholder="Inserisci la tua email" formControlName="email">
+      </label>
+    </div>
+    <div>
+      <label>
+        Password:
+        <input type="password" class="form-control" placeholder="Inserisci la tua password" formControlName="password">
+      </label>
+    </div>
+    <button type="submit">Invia</button>
+  </form>

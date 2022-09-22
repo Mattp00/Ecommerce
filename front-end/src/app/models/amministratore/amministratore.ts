@@ -4,4 +4,5 @@ export interface Amministratore
     cognome:string
     email:string
     eta:number
+    password:string
 }

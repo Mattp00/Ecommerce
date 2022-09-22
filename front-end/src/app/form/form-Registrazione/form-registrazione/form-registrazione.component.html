@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="send()">
+    <div>
+        <label>
+          Nome:
+          <input class="form-control" type="text" placeholder="Inserisci la tua email" formControlName="nome">
+        </label>
+    </div>
+    <div>
+        <label>
+          Cognome:
+          <input class="form-control" type="text" placeholder="Cognome" formControlName="cognome">
+        </label>
+    </div>
+    <div>
+      <label>
+        Email:
+        <input class="form-control" type="email" placeholder="Email" formControlName="email">
+      </label>
+    </div>
+    <div>
+        <label>
+          eta:
+          <input class="form-control" type="number" placeholder="eta" formControlName="eta">
+        </label>
+      </div>
+    <div>
+      <label>
+        Password:
+        <input type="password" class="form-control" placeholder="password" formControlName="password">
+      </label>
+    </div>
+    <button type="submit">Invia</button>
+  </form>
